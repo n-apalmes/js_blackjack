@@ -55,7 +55,8 @@ Game.prototype.hit = function(){
   this.player_1.hit(this.game_deck.draw());
   this.get_advice();
 
- $("#player_data").append("<img src='images/"+this.player_1.cards_held[this.player_1.cards_held.length-1].image+"'' width='100'>");
+ $("#player_data").append("<img class='hidden' src='images/"+this.player_1.cards_held[this.player_1.cards_held.length-1].image+"'' width='100'>");
+ $(".hidden").fadeIn();
 
   // console.log(this.player_1.cards_held[this.player_1.cards_held.length-1].value)
   $("#player_score").text("The player score: "+this.player_1.score)
@@ -72,7 +73,8 @@ Game.prototype.next = function(){
   if(this.dealer.stay() == false){
     this.dealer.dealer_hand.hit(this.game_deck.draw())
     $("#dealer_score").text("Dealer score: "+this.dealer.dealer_hand.score)
-    $("#dealer_data").append("<img src='images/"+this.dealer.dealer_hand.cards_held[this.dealer.dealer_hand.cards_held.length-1].image+"'' width='100'>");
+    $("#dealer_data").append("<img class='hidden' src='images/"+this.dealer.dealer_hand.cards_held[this.dealer.dealer_hand.cards_held.length-1].image+"'' width='100'>");
+    $(".hidden").fadeIn();
     if (this.dealer.dealer_hand.bust()){
       // console.log("You win, the dealer busted")
       alert("You win, the dealer busted")
@@ -92,7 +94,7 @@ Game.prototype.stay = function(){
 
   console.log("player stays");
   this.player_stay = true;
-  $(".next").show();
+  $(".next").fadeIn();
     // $("#dealer_data").append("<img src='images/"+this.player_1.cards_held[1].image+"'' width='100'>");
   $("#dealer_data").append("<img src='images/"+this.dealer.dealer_hand.cards_held[1].image+"'' width='100'>");
 }
