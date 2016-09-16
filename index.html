@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blackjack</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/deck.js"></script>
+  <script src="js/hand.js"></script>
+  <script src="js/dealer.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/game_constructor.js"></script>
+  <script src="js/application.js"></script>
+  <link rel="stylesheet" href="application.css">
+</head>
+<body>
+
+<table border="1px" width="100%">
+<td id ="player_cell">
+
+<p id="player_data"></p>
+<p id="player_score"></p>
+<p id="advice"> </p>
+<button id="hit" type="button">Hit</button>
+<button id="stay" type="button">Stay</button>
+</td>
+<td id="dealer_cell">
+  <div id="dealer_data">
+  </div>
+  <p class="next" id="dealer_score"></p>
+  <div id="dealer_button" >
+      <button class="next" id="next" type="button" display="none">next</button>
+  </div>
+</td>
+</table>
+
+</body>
+</html>
